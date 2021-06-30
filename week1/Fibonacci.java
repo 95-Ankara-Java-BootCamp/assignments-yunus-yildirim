@@ -13,7 +13,8 @@ public class Fibonacci {
     }
 
     /**
-     * input: n output: n. fibonacci sayısı
+     * input: n 
+     * output: n. fibonacci sayısı
      */
     public static int fibonacci(int n) {
         if (n == 0 || n == 1)
