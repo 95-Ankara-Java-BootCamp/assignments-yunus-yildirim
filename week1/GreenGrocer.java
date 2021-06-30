@@ -6,9 +6,12 @@ import java.util.Scanner;
  * Kullanıcıların manavdan almış oldukları ürünlerin ağırlık değerlerini alıp,
  * bu değerlere göre toplam tutarı ekrana yazdıran program.
  * 
- * Fiyat listesi: Armut : 2,14 TL Elma : 3,67 TL Domates : 1,11 TL Muz: 0,95 TL
+ * Fiyat listesi: 
+ * Armut : 2,14 TL 
+ * Elma : 3,67 TL 
+ * Domates : 1,11 TL 
+ * Muz: 0,95 TL
  * Patlıcan : 5,00 TL
- * 
  */
 public class GreenGrocer {
     public static void main(String[] args) {
@@ -20,8 +23,13 @@ public class GreenGrocer {
         double total = 0;
         double weight;
         double prices[] = { PEAR, APPLE, TOMATO, BANANA, EGGPLANT };
-        String[] messages = { "Weight of pear in kgs: ", "Weight of apple in kgs: ", "Weight of tomato in kgs: ",
-                "Weight of banana in kgs: ", "Weight of eggplant in kgs: " };
+        String[] messages = { 
+            "Weight of pear in kgs: ", 
+            "Weight of apple in kgs: ", 
+            "Weight of tomato in kgs: ",
+            "Weight of banana in kgs: ", 
+            "Weight of eggplant in kgs: " 
+        };
 
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < messages.length; i++) {
@@ -34,8 +42,8 @@ public class GreenGrocer {
     }
 
     /**
-     * input: a message to ask the weight value for a particular product output:
-     * weight value of the particular product
+     * input: a message to ask the weight value for a particular product 
+     * output: weight value of the particular product
      */
     public static double getWeight(String message, Scanner scan) {
         System.out.print(message);
