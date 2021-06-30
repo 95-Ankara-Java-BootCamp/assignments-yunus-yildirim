@@ -16,39 +16,43 @@ import java.util.Scanner;
  */
 public class GreenGrocer {
     public static void main(String[] args) {
-        double pear = 2.14;
-        double apple = 3.67;
-        double tomato = 1.11;
-        double banana = 0.95;
-        double eggplant = 5;
+        final double PEAR = 2.14;
+        final double APPLE = 3.67;
+        final double TOMATO = 1.11;
+        final double BANANA = 0.95;
+        final double EGGPLANT = 5;
         double total = 0;
-        int weight;
-    
-        Scanner scan = new Scanner(System.in);
+        double weight;
+        double prices[] = { PEAR, APPLE, TOMATO, BANANA, EGGPLANT };
+        String[] messages = {
+            "Weight of pear in kgs: " ,
+            "Weight of apple in kgs: ",
+            "Weight of tomato in kgs: ",
+            "Weight of banana in kgs: ",
+            "Weight of eggplant in kgs: "
+        };
 
-        System.out.print("Armut kaç kg: ");
-        weight = scan.nextInt();
-        total += weight * pear;
-
-        System.out.print("Elma kaç kg: ");
-        weight = scan.nextInt();
-        total += weight * apple;
-
-
-        System.out.print("Domates kaç kg: ");
-        weight = scan.nextInt();
-        total += weight * tomato;
-
-        System.out.print("Muz kaç kg: ");
-        weight = scan.nextInt();
-        total += weight * banana;
-
-        System.out.print("Patlıcan kaç kg: ");
-        weight = scan.nextInt();
-        total += weight * eggplant;
-
-        scan.close();
+        for (int i = 0; i < messages.length; i++) {
+            weight = getWeight(messages[i]);
+            total += weight * prices[i];
+        }
 
         System.out.print("Toplam tutar: " + total);
     }
+
+    /**
+     * input: a message to ask the weight value for a particular product
+     * output: weight value of the particular product
+     */
+    public static double getWeight(String message){
+        System.out.print(message);
+
+        Scanner scan = new Scanner(System.in);
+        while(!scan.hasNextDouble()){
+            System.out.print("Weight value must be a number!");
+        }
+        scan.close();
+
+        return scan.nextDouble();
+    }   
 }
