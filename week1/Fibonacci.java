@@ -1,7 +1,7 @@
 package week1;
 
 /**
- * Verilen n değeri için n adet fibonacci sayısını ekrana yazdıran program
+ * Program that prints first n fibonacci numbers for the given n value
  */
 public class Fibonacci {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class Fibonacci {
 
     /**
      * input: n 
-     * output: n. fibonacci sayısı
+     * output: nth fibonacci number
      */
     public static int fibonacci(int n) {
         if (n == 0 || n == 1)

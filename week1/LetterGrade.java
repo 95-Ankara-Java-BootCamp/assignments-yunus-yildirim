@@ -1,7 +1,7 @@
 package week1;
 
 /**
- * Verilen okul puanının harf karşılığını ekrana yazdıran program.
+ * The program that prints the letter equivalent of the given average score according to below.
  * 90 - 100  ==> A
  * 80 - 90   ==> B
  * 70 - 80   ==> C
@@ -10,21 +10,21 @@ package week1;
 */
 public class LetterGrade {
     public static void main(String[] args) {
-        int finalAverage = 95;
-        String finalLetter;
+        int score = 95;
+        String letter;
         
-        if (finalAverage >= 90) {
-            finalLetter = "A";
-        } else if (finalAverage >= 80) {
-            finalLetter = "B";
-        } else if (finalAverage >= 70) {
-            finalLetter = "C";
-        } else if (finalAverage >= 60) {
-            finalLetter = "D";
+        if (score >= 90) {
+            letter = "A";
+        } else if (score >= 80) {
+            letter = "B";
+        } else if (score >= 70) {
+            letter = "C";
+        } else if (score >= 60) {
+            letter = "D";
         } else {
-            finalLetter = "F";
+            letter = "F";
         }
 
-        System.out.print(finalAverage + " notunun harf karşılığı: " + finalLetter);
+        System.out.print(score + " translates to a letter grade of " + letter);
     }
 }

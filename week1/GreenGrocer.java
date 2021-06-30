@@ -42,7 +42,8 @@ public class GreenGrocer {
     }
 
     /**
-     * input: a message to ask the weight value for a particular product 
+     * input1: a message to ask the weight value for a particular product
+     * input2: a scanner instance to get value
      * output: weight value of the particular product
      */
     public static double getWeight(String message, Scanner scan) {
