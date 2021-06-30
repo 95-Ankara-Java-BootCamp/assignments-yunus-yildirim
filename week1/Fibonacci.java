@@ -1,7 +1,7 @@
 package week1;
 
 /**
- * Program that prints first n fibonacci numbers for the given n value
+ * Program that prints first n fibonacci numbers for the given value n
  */
 public class Fibonacci {
     public static void main(String[] args) {
