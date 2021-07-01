@@ -2,7 +2,7 @@
 
 ## Soru 1 - Fibonacci Serisi -> `Fibonacci.java`
 
-Özyineli (recursive) fonksiyon kullanarak fibonacci serisinin ilk `n` karakterini ekrana yazdıran programı yazınız. Fibonacci serisinin eleman sayısını `java.util.Random` sınıfını kullanarak oluşturabilirsiniz.
+Özyineli (recursive) fonksiyon kullanarak fibonacci serisinin ilk `n` karakterini ekrana yazdıran programı yazınız. Fibonacci serisinin eleman sayısını (`n`) `java.util.Random` sınıfını kullanarak oluşturabilirsiniz.
 
 ### Fibonacci Serisi Nedir?
 Fibonacci serisi, her sayının kendinden önceki ile toplanması sonucu oluşan bir sayı dizisidir. Bu şekilde devam eden bu dizide sayılar birbirleriyle oranlandığında altın oran ortaya çıkar, yani bir sayı kendisinden önceki sayıya bölündüğünde altın orana gittikçe yaklaşan bir dizi elde edilir.
