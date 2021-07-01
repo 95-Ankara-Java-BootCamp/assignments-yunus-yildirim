@@ -13,9 +13,10 @@ public class Fibonacci {
         int n = rand.nextInt(50);
         // Print generated number
         System.out.println("Generated number: " + n);
-        // Print all fibonacci numbers till n 
+        // Print first n fibonacci number
         System.out.println("First " + n + " fibonacci number:");
         for (int i = 0; i < n; i++) {
+            // Print i. fibonacci number
             System.out.print(fibonacci(i) + " ");
         }
     }
