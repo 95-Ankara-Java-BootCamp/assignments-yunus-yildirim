@@ -2,7 +2,7 @@ package week1;
 
 /**
  * The program that prints the letter equivalent of the given average score according to below.
- *  > 90     ==> A
+ *  >= 90     ==> A
  * 80 - 90   ==> B
  * 70 - 80   ==> C
  * 60 - 70   ==> D
