@@ -38,7 +38,7 @@ public class GreenGrocer {
         }
         scan.close();
 
-        System.out.print("Toplam tutar: " + total);
+        System.out.printf("Total price %.2f", total);
     }
 
     /**
