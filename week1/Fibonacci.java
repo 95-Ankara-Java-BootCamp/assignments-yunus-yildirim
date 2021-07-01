@@ -9,9 +9,12 @@ public class Fibonacci {
     public static void main(String[] args) {
         // Create instance of Random class
         Random rand = new Random();
-        // Generate a random integer in range 0 to 99
-        int n = rand.nextInt(100);
+        // Generate a random integer in range 0 to 49
+        int n = rand.nextInt(50);
+        // Print generated number
+        System.out.println("Generated number: " + n);
         // Print all fibonacci numbers till n 
+        System.out.println("First " + n + " fibonacci number:");
         for (int i = 0; i < n; i++) {
             System.out.print(fibonacci(i) + " ");
         }
