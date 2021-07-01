@@ -22,7 +22,7 @@ cd assignments-yunus-yildirim
 code .
 ```
 - ***Not***:
-*Visual Studio Code içerisinde kodları düzenleyebilmek ve çalıştırabilmek için **Java Extension Pack** ve **Debugger for Java** eklentileri yüklü olması gerekiyor veya farklı bir [Java IDE](https://www.educative.io/blog/best-java-ides-2021)'si kullanabilirsiniz.*
+*Visual Studio Code içerisinde kodları düzenleyebilmek ve çalıştırabilmek için **Java Extension Pack** ve **Debugger for Java** eklentileri yüklü olması gerekiyor veya bir [Java IDE](https://www.educative.io/blog/best-java-ides-2021)'si kullanabilirsiniz.*
 
 
 ## License
