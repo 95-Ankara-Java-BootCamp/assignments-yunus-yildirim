@@ -16,7 +16,7 @@ Bu da bir Fibonacci dizisidir:
 Çünkü Fibonacci dizisi herhangi iki sayıdan başlayabilir.
 
 
-- ***Kaynak*** : [wikipedia]((https://tr.wikipedia.org/wiki/Fibonacci_dizisi))
+- ***Kaynak*** : [Wikipedia](https://tr.wikipedia.org/wiki/Fibonacci_dizisi)
 
 ### Örnek çıktılar:
 
