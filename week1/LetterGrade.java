@@ -2,11 +2,11 @@ package week1;
 
 /**
  * The program that prints the letter equivalent of the given average score according to below.
- * 90 - 100  ==> A
+ *  > 90     ==> A
  * 80 - 90   ==> B
  * 70 - 80   ==> C
  * 60 - 70   ==> D
- * 00 - 60   ==> F 
+ *  < 60     ==> F 
 */
 public class LetterGrade {
     public static void main(String[] args) {
