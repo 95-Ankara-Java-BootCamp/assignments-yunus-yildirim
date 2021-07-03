@@ -14,7 +14,7 @@ public class LetterGrade {
         String letter;
         // Create instance of Random class
         Random rand = new Random();
-        // Generate a random integer in range 0 to 101
+        // Generate a random integer in range 0 to 100
         int score = rand.nextInt(101);
         // Print generated score
         System.out.println("Harith's score: " + score);
