@@ -12,7 +12,7 @@ public class BoxOffice {
 
     private MovieTheater moviesDB;
     private Map<Integer, Movie> movies;
-    private Map<Integer, Genre> genres;
+    // private Map<Integer, Genre> genres;
     List<Ticket> tickets;
 
     public BoxOffice() {
