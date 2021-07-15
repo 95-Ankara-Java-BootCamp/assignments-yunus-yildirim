@@ -85,8 +85,7 @@ class MovieTheater {
 
     Map<Integer, Genre> genres;
     Map<Integer, Movie> movies;
-    ArrayList<Ticket> tickets;
-    final double TICKET_PRICE = 25.0;
+    final double TICKET_BASE_PRICE = 25.0;
 
     public MovieTheater() {
         setGenres();
