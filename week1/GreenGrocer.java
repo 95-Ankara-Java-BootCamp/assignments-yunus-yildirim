@@ -1,5 +1,3 @@
-package week1;
-
 import java.util.Scanner;
 
 /**
@@ -20,6 +18,7 @@ public class GreenGrocer {
         final double TOMATO = 1.11;
         final double BANANA = 0.95;
         final double EGGPLANT = 5;
+        final Scanner scanner = new Scanner(System.in);
         double total = 0;
         double weight;
         double prices[] = { PEAR, APPLE, TOMATO, BANANA, EGGPLANT };
@@ -31,12 +30,12 @@ public class GreenGrocer {
             "Weight of eggplant in kgs: " 
         };
 
-        Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < messages.length; i++) {
-            weight = getWeight(messages[i], scan);
-            total += weight * prices[i];
+        try (scanner) {
+            for (int i = 0; i < messages.length; i++) {
+                weight = getWeight(messages[i], scanner);
+                total += weight * prices[i];
+            }
         }
-        scan.close();
 
         System.out.printf("Total price %.2f", total);
     }
