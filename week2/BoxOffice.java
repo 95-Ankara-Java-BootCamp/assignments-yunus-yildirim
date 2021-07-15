@@ -27,7 +27,9 @@ public class BoxOffice {
         final Scanner scanner = new Scanner(System.in);
         BoxOffice boxOffice = new BoxOffice();
 
-        boxOffice.sellTickets(scanner);
+        try (scanner) {
+            boxOffice.sellTickets(scanner);
+        }
         boxOffice.printTotalCost();
     }
 
