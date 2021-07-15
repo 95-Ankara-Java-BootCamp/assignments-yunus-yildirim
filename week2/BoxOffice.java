@@ -12,13 +12,13 @@ public class BoxOffice {
 
     private MovieTheater moviesDB;
     private Map<Integer, Movie> movies;
-    private Map<Integer, Genre> genres;
+    // private Map<Integer, Genre> genres;
     List<Ticket> tickets;
 
     public BoxOffice() {
         this.moviesDB = new MovieTheater();
         this.movies = moviesDB.getMovies();
-        this.genres = moviesDB.getGenres();
+        // this.genres = moviesDB.getGenres();
         this.tickets = new ArrayList<Ticket>();
 
     }
