@@ -68,17 +68,16 @@ public class BoxOffice {
         return scanner.nextInt();
     }
 
-/*     public static Customer getCustomerInfo(Scanner scanner) {
-        String name;
-        int age;
-
-        System.out.println("Name: ");
-        name = scanner.nextLine();
-
-        age = getIntValue("Age: ", scanner);
-
-        return new Customer(name, age);
-    } */
+    /*
+     * public static Customer getCustomerInfo(Scanner scanner) { String name; int
+     * age;
+     * 
+     * System.out.println("Name: "); name = scanner.nextLine();
+     * 
+     * age = getIntValue("Age: ", scanner);
+     * 
+     * return new Customer(name, age); }
+     */
 }
 
 class MovieTheater {
@@ -107,11 +106,11 @@ class MovieTheater {
     public void setMovies() {
         this.movies = new HashMap<>() {
             {
-                put(0, new Movie(0, 3, "Psycho (1960)", TICKET_PRICE));
-                put(1, new Movie(1, 0, "The Road Warrior (1982)", TICKET_PRICE));
-                put(2, new Movie(2, 1, "Duck Soup (1933)", TICKET_PRICE));
-                put(3, new Movie(3, 4, "Memento (2002)", TICKET_PRICE));
-                put(4, new Movie(4, 2, "The Shawshank Redemption (1994)", TICKET_PRICE));
+                put(0, new Movie(0, 3, "Psycho (1960)", TICKET_BASE_PRICE));
+                put(1, new Movie(1, 0, "The Road Warrior (1982)", TICKET_BASE_PRICE));
+                put(2, new Movie(2, 1, "Duck Soup (1933)", TICKET_BASE_PRICE));
+                put(3, new Movie(3, 4, "Memento (2002)", TICKET_BASE_PRICE));
+                put(4, new Movie(4, 2, "The Shawshank Redemption (1994)", TICKET_BASE_PRICE));
             }
         };
 
@@ -127,40 +126,23 @@ class MovieTheater {
 
 }
 
-/* class Customer {
-    int id;
-    String name;
-    int age;
-
-    public Customer(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-} */
+/*
+ * class Customer { int id; String name; int age;
+ * 
+ * public Customer(String name, int age) { this.name = name; this.age = age; }
+ * 
+ * public int getId() { return id; }
+ * 
+ * public void setId(int id) { this.id = id; }
+ * 
+ * public String getName() { return name; }
+ * 
+ * public void setName(String name) { this.name = name; }
+ * 
+ * public int getAge() { return age; }
+ * 
+ * public void setAge(int age) { this.age = age; } }
+ */
 
 class Ticket {
     private int id;
