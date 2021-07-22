@@ -1,24 +1,34 @@
 import java.util.*;
 import java.util.stream.IntStream;
 
-public abstract class FlightBookingBase implements FlightBookingService {
+public abstract class FlightBookingBase {
+    final int MIN_SEATING_CAPACITY = 10;
+    final int BUSINESS_SEAT_CAPACITY = 5;
+    final int ECONOMY_START_FROM = 5;
+
     private int seatingCapacity;
     private boolean[] seats;
 
+    // will be edited!!!!
     public FlightBookingBase() {
+        // set seating capacity based on doc
+        this.setSeatingCapacity(MIN_SEATING_CAPACITY);
+        // inıt seats
         initSeats();
     }
 
+    // will be edited!!!!
     public FlightBookingBase(int seatingCapacity) {
-        // Set seating capacity based on doc
+        // set seating capacity based on doc
         this.setSeatingCapacity(seatingCapacity);
+        // init seats
         initSeats();
     }
 
     public void initSeats() {
         // Init array of seats by seating capacity
         this.seats = new boolean[this.seatingCapacity];
-        // Fill array of seats with true means free
+        // Fill array of seats with false means free
         Arrays.fill(this.seats, false);
     }
 
@@ -45,5 +55,17 @@ public abstract class FlightBookingBase implements FlightBookingService {
         return isFull;
     }
 
-    public abstract void bookSeat();
+    public int getDecision(String message, String interval, Scanner scanner) {
+        System.out.print(message);
+
+        while (!scanner.hasNextInt() || !scanner.hasNext(interval)) {
+            System.out.println("Entered value must be a number or valid");
+            System.out.print(message);
+            scanner.next();
+        }
+
+        return scanner.nextInt();
+    }
+
+    public abstract void bookAFlight();
 }
