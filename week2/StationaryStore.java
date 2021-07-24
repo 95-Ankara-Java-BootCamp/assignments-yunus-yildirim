@@ -87,11 +87,12 @@ public class StationaryStore {
     }
 
     public static String productMapToString(Map<String, Integer> productMap) {
-        String products2String = productMap.keySet().stream().map(key -> key + ": " + productMap.get(key))
-                .collect(Collectors.joining(", ", "{ ", " }\n"));
+        String products2String;
         if (productMap.size() == 0) {
             return null;
         }
+        products2String = productMap.keySet().stream().map(key -> key + ": " + productMap.get(key))
+                .collect(Collectors.joining(", ", "{ ", " }\n"));
         return products2String;
     }
 
