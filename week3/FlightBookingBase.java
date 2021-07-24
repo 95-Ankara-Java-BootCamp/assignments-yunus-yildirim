@@ -1,13 +1,14 @@
 import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public abstract class FlightBookingBase {
     final int MIN_SEATING_CAPACITY = 10;
     final int BUSINESS_SEAT_CAPACITY = 5;
-    final int ECONOMY_START_FROM = 5;
 
-    private int seatingCapacity;
-    private boolean[] seats;
+    int seatingCapacity;
+    boolean[] seats;
 
     // will be edited!!!!
     public FlightBookingBase() {
@@ -45,26 +46,76 @@ public abstract class FlightBookingBase {
         return isFull;
     }
 
-    public boolean isEconomyFull() {
+    public boolean isBusinessFull() {
         boolean isFull = IntStream.range(0, BUSINESS_SEAT_CAPACITY).allMatch(i -> seats[i]);
         return isFull;
     }
 
-    public boolean isBusinessFull() {
-        boolean isFull = IntStream.range(ECONOMY_START_FROM, this.seatingCapacity).allMatch(i -> seats[i]);
+    public boolean isEconomyFull() {
+        boolean isFull = IntStream.range(BUSINESS_SEAT_CAPACITY, this.seatingCapacity).allMatch(i -> seats[i]);
         return isFull;
     }
 
-    public int getDecision(String message, String interval, Scanner scanner) {
-        System.out.print(message);
+    public int getDecision(String message, int min, int max, Scanner scanner) {
+        int decision = 1;
+        System.out.println(message);
 
-        while (!scanner.hasNextInt() || !scanner.hasNext(interval)) {
-            System.out.println("Entered value must be a number or valid");
-            System.out.print(message);
-            scanner.next();
+        while (scanner.hasNext()) {
+            if (scanner.hasNextInt()) {
+                decision = scanner.nextInt();
+                if (decision >= min && decision <= max) {
+                    return decision;
+                }
+                System.out.println("\n***\nEntered value must be in range!!!\n***");
+                System.out.println(message);
+                scanner.nextLine();
+
+            } else {
+                System.out.println("\n***\nEntered value must be a number!!!\n***");
+                System.out.println(message);
+                scanner.next();
+            }
         }
 
-        return scanner.nextInt();
+        return decision;
+
+    }
+
+    public String getAirlinerStatus() {
+        String message = Arrays.toString(seats).replace("true", "TAKEN").replace("false", "EMPTY");
+        return message;
+    }
+
+    public String getAirlinerStatus(int decision) {
+        int startIndex, endIndex;
+        boolean[] seatsSliced;
+        String message;
+
+        if (decision == 1) {
+            message = "Business Cabin: \n";
+            startIndex = 0;
+            endIndex = BUSINESS_SEAT_CAPACITY;
+        } else {
+            message = "Economy Cabin: \n";
+            startIndex = BUSINESS_SEAT_CAPACITY;
+            endIndex = this.seatingCapacity;
+        }
+        seatsSliced = Arrays.copyOfRange(seats, startIndex, endIndex);
+
+        message = message + Arrays.toString(seatsSliced).replace("true", "TAKEN").replace("false", "EMPTY");
+
+        return message;
+    }
+
+    public boolean pickASeat(int selectedSeat) {
+        if (seats[selectedSeat] == false) {
+            seats[selectedSeat] = true;
+            System.out.println("The selected seat has been purchased. Have a nice trip!");
+            return false;
+        } else {
+            System.out.println("Selected seat is taken.");
+            return true;
+        }
     }
 
     public abstract void bookAFlight();
