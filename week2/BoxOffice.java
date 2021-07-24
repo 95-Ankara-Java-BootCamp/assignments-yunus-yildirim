@@ -35,8 +35,8 @@ public class BoxOffice {
 
     private void printTotalCost() {
         String ticketCosts = "\n" + tickets.stream().map(Object::toString).collect(Collectors.joining("\n"));
-        double totalCost = tickets.stream().map(ticket -> ticket.getCost()).collect(Collectors.toList()).stream()
-                .reduce(Double::sum).get();
+        double totalCost = tickets.stream().map(ticket -> ticket.getCost()).reduce(Double::sum).get();
+                
 
         System.out.println(ticketCosts);
         System.out.println("\n Total cost: " + totalCost);
