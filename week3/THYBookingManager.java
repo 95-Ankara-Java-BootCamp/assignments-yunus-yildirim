@@ -1,9 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * THYBookingSystemManager
@@ -13,7 +11,7 @@ public class THYBookingManager extends FlightBookingBase {
     final String seatSelectMessage = "Select a seat:";
     List<String> welcomeMessageList = new ArrayList<String>() {
         {
-            add("TURKIST AIRLINES");
+            add("TURKISH AIRLINES");
             // add("Where do you want to explore?");
             add("Please Select Cabin Class:");
             add("1. Business Class");
@@ -40,6 +38,7 @@ public class THYBookingManager extends FlightBookingBase {
 
     }
 
+    @Override
     public void bookBusinessFlight() {
         int selectedSeat;
         // String businessSeatsInverval = "[0-" + this.BUSINESS_SEAT_CAPACITY + "]";
@@ -50,7 +49,6 @@ public class THYBookingManager extends FlightBookingBase {
             do {
                 selectedSeat = getDecision(businessSelectMessage, 1, BUSINESS_SEAT_CAPACITY, scanner) - 1;
             } while (pickASeat(selectedSeat));
-            seats[selectedSeat] = true;
             System.out.println(getAirlinerStatus());
         } else {
             System.out.println("Bussiness cabin is full.");
@@ -58,6 +56,7 @@ public class THYBookingManager extends FlightBookingBase {
         }
     }
 
+    @Override
     public void bookEconomyFlight() {
         int selectedSeat;
         // String economySeatsInverval = "(" + "[" + BUSINESS_SEAT_CAPACITY + "-" + 9 +
@@ -68,12 +67,10 @@ public class THYBookingManager extends FlightBookingBase {
             do {
                 selectedSeat = getDecision(businessSelectMessage, 6, seatingCapacity, scanner) - 1;
             } while (pickASeat(selectedSeat));
-            seats[selectedSeat] = true;
             System.out.println(getAirlinerStatus());
         } else {
             System.out.println("Economy cabin is full.");
             bookAFlight();
         }
     }
-
 }

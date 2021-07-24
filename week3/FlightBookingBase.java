@@ -1,6 +1,5 @@
-import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public abstract class FlightBookingBase {
@@ -113,10 +112,14 @@ public abstract class FlightBookingBase {
             System.out.println("The selected seat has been purchased. Have a nice trip!");
             return false;
         } else {
-            System.out.println("Selected seat is taken.");
+            System.out.println("The selected seat is taken.");
             return true;
         }
     }
 
     public abstract void bookAFlight();
+
+    public abstract void bookBusinessFlight();
+
+    public abstract void bookEconomyFlight();
 }
