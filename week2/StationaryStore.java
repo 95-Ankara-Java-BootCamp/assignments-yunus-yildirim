@@ -87,16 +87,12 @@ public class StationaryStore {
     }
 
     public static String productMapToString(Map<String, Integer> productMap) {
-        StringBuilder stringBuilder = new StringBuilder();
-        Map<String, Integer> productTree;
+        String products2String = productMap.keySet().stream().map(key -> key + ": " + productMap.get(key))
+                .collect(Collectors.joining(", ", "{ ", " }\n"));
         if (productMap.size() == 0) {
             return null;
         }
-        productTree = new TreeMap<String, Integer>(productMap);
-        for (Map.Entry<String, Integer> pair : productTree.entrySet()) {
-            stringBuilder.append(pair.getKey()).append(": ").append(pair.getValue()).append("\n");
-        }
-        return stringBuilder.toString();
+        return products2String;
     }
 
     public int getProductCount(String productName, Map<String, Integer> productMap) {
